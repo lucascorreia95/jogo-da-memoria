@@ -1,0 +1,38 @@
+.card {
+    perspective: 1000;
+    margin: 1%;
+}
+
+.card__container.card__container--active {  		
+    transform: rotateY(180deg);  	
+}
+
+.card, .card__front, .card__back {  	
+    width: 265px;
+    height: 270px;
+}
+
+.card__container {  	
+    transition: 0.6s;  	
+    transform-style: preserve-3d;    	
+    position: relative;  
+}
+
+.card__front, .card__back {  	
+    backface-visibility: hidden;    	
+    position: absolute;  	
+    top: 0;  	
+    left: 0;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 15px;
+}
+
+.card__back { 
+    z-index: 2;
+    background-color: #dddddd 
+}    
+
+.card__front { 
+    transform: rotateY(180deg); 
+}
