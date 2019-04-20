@@ -1,0 +1,34 @@
+.end-game{
+    display: none;
+}
+
+.end-game.end-game--active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.end-game__wrapper{
+    padding: 15px;
+    background: #fff;
+    border-radius: 4px;
+    animation-name: grow-effect;
+    animation-duration: 1s;
+}
+
+@keyframes grow-effect {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}

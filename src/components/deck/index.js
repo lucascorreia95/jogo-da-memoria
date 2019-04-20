@@ -1,6 +1,4 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
 import Card from '../card'
 
@@ -56,6 +54,9 @@ class Deck extends Component {
         deck.push(<Card value={i} id={i+11} key={i+11} img={ Card10 } />)
       }
     }
+    
+    deck.sort(() => Math.random() - 0.5)
+
     return deck
   }
 
@@ -68,8 +69,4 @@ class Deck extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  userName: state.login.userName,
-})
-
-export default connect(mapStateToProps, null)(Deck)
+export default Deck

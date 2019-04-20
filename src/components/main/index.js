@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
 
+import Scoreboard from '../scoreboard'
 import Deck from '../deck'
+import EndGame from '../endgame'
+
+import Logo from '../../assets/jogo-da-memoria.png'
 
 import './style.css'
 
@@ -13,10 +15,18 @@ class Main extends Component {
         <div className="main">
             <div className="main__container">
                 <div className="main__header">
-                    <h1 className="main__name">Bem-vindo {this.props.userName}</h1>
+                    <div className="main__logo">
+                        <figure className="main__img">
+                            <img src={Logo} alt="Jogo da memória" />
+                        </figure>
+                    </div>
+                    <Scoreboard />
                 </div>
                 <div className="main__deck">
                     <Deck />
+                </div>
+                <div className="main__end-game">
+                    <EndGame />
                 </div>
             </div>
         </div>
@@ -24,8 +34,4 @@ class Main extends Component {
     }
 }
 
-const mapStateToProps = state => ({
-  userName: state.login.userName,
-})
-
-export default connect(mapStateToProps, null)(Main)
+export default Main

@@ -1,11 +1,13 @@
 export const clickCard = (id, markedCard, valueCard) => {
     
-    let typeAction = ""
+    let typeAction = "nothing"
 
-    if (markedCard === -1) {
-        typeAction = 'MARKED_CARD'
-    } else {
-        typeAction = 'SEC_MARKED_CARD'
+    if (id !== markedCard) {
+        if (markedCard === -1) {
+            typeAction = 'MARKED_CARD'
+        } else {
+            typeAction = 'SEC_MARKED_CARD'
+        }
     }
 
     return{
@@ -21,13 +23,14 @@ export const checkCards = (value, secValue) => {
 
     if ( (value !== -1) && (secValue !== -1) ) {
         if (value === secValue) {
-            console.log("iguais")
+            typeAction = "PAIR_FOUND"
         } else {
             typeAction = "RESETED_CARDS"
         }
     }
 
     return {
-        type: typeAction
+        type: typeAction,
+        payload: value
     }
 }

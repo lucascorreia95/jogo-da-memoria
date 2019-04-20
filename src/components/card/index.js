@@ -8,8 +8,11 @@ import './style.css'
 class Card extends Component {
 
   componentDidUpdate(){
-    if( (this.props.markedCard !== -1) && (this.props.secMarkedCard !== -1) ){
-      this.props.checkCards(this.props.valueCard, this.props.secValueCard)
+    if( (this.props.markedCard !== -1) && (this.props.secMarkedCard !== -1) && 
+      ((this.props.markedCard === this.props.id ) || (this.props.secMarkedCard === this.props.id)) ){
+        setTimeout(() => {
+          this.props.checkCards(this.props.valueCard, this.props.secValueCard)
+        }, 2000)
     }
   }
 
@@ -21,6 +24,10 @@ class Card extends Component {
       classValue = "card__container card__container--active"
     } else {
       classValue = "card__container"
+    }
+
+    if( this.props.pairsFound.indexOf(this.props.value) !== -1 ){
+      classValue = `${classValue} card__container--found`
     }
 
     return (
@@ -43,7 +50,8 @@ const mapStateToProps = state => ({
   markedCard: state.card.markedCard,
   secMarkedCard: state.card.secMarkedCard,
   valueCard: state.card.valueCard,
-  secValueCard: state.card.secValueCard
+  secValueCard: state.card.secValueCard,
+  pairsFound: state.card.pairsFound
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({ clickCard, checkCards }, dispatch)
