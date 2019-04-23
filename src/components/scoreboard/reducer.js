@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, rounds: state.rounds + 1 }
         case 'PAIR_FOUND':
             return { ...state, pairs: state.pairs - 1 }
+        case 'GAME_RESTARTED':
+            return { ...INITIAL_STATE }
         default:
             return state
     }

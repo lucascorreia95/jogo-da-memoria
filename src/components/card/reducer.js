@@ -16,6 +16,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, markedCard: -1, valueCard: -1, secMarkedCard: -1, secValueCard: -1 }
         case 'PAIR_FOUND':
             return { ...state, pairsFound: [...state.pairsFound, action.payload], markedCard: -1, valueCard: -1, secMarkedCard: -1, secValueCard: -1}
+        case 'GAME_RESTARTED':
+            return { ...INITIAL_STATE }
         default:
             return state
     }

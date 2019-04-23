@@ -9,6 +9,8 @@ export default (state = INITIAL_STATE, action) => {
             return { ...state, userName: action.payload }
         case 'HANDLE_INPUT_CHANGE':
             return { ...state, inputValue: action.payload }
+        case 'GAME_RESTARTED':
+            return { ...INITIAL_STATE }
         default:
             return state
     }

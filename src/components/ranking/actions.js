@@ -1,0 +1,1 @@
+export const addRanking = (user, rounds) => ({type: "RATING_ADDED", payload: user, rounds })

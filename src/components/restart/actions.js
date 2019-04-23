@@ -1,0 +1,1 @@
+export const restart = () => ({type: "GAME_RESTARTED"})
