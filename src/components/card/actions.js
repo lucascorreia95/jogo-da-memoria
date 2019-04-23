@@ -34,3 +34,5 @@ export const checkCards = (value, secValue) => {
         payload: value
     }
 }
+
+export const lockScreen = () => ({type: "BLOCKED_SCREEN"})

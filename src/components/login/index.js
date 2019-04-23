@@ -11,8 +11,12 @@ class Login extends Component {
 
   handleSubmit = e => {
     e.preventDefault();
-    this.props.login(this.props.inputValue)
-    this.props.history.push('/main')
+    if(this.props.inputValue) {
+      this.props.login(this.props.inputValue)
+      this.props.history.push('/main')
+    } else {
+      alert("Por favor, digite seu nome!");
+    }
   }
 
   render() {

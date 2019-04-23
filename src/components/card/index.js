@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { clickCard, checkCards } from './actions'
+import { clickCard, checkCards, lockScreen } from './actions'
 
 import './style.css'
 
@@ -10,9 +10,19 @@ class Card extends Component {
   componentDidUpdate(){
     if( (this.props.markedCard !== -1) && (this.props.secMarkedCard !== -1) && 
       ((this.props.markedCard === this.props.id ) || (this.props.secMarkedCard === this.props.id)) ){
+        
+        this.props.lockScreen()
+
         setTimeout(() => {
           this.props.checkCards(this.props.valueCard, this.props.secValueCard)
         }, 2000)
+        
+    }
+  }
+
+  handleCard(){
+    if (!this.props.blockedScreen){
+      this.props.clickCard(this.props.id, this.props.markedCard, this.props.value) 
     }
   }
 
@@ -31,10 +41,7 @@ class Card extends Component {
     }
 
     return (
-      <div
-        className="card"
-        onClick={ () => this.props.clickCard(this.props.id, this.props.markedCard, this.props.value) }
-      >
+      <div className="card" onClick={ () => this.handleCard() } >
         <div className={classValue}>
           <figure className="card__front">
             <img src={this.props.img} alt="Card" />
@@ -51,9 +58,10 @@ const mapStateToProps = state => ({
   secMarkedCard: state.card.secMarkedCard,
   valueCard: state.card.valueCard,
   secValueCard: state.card.secValueCard,
-  pairsFound: state.card.pairsFound
+  pairsFound: state.card.pairsFound,
+  blockedScreen: state.card.blockedScreen
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({ clickCard, checkCards }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ clickCard, checkCards, lockScreen }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(Card)

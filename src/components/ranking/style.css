@@ -1,0 +1,19 @@
+.end-game__ranking{
+    margin-top: 15px;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #dddddd;
+    padding: 10px 0;
+}
+
+.ranking__header{
+    margin-bottom: 10px;
+}
+
+.ranking__list{
+    padding-left: 15px;
+    list-style: none;
+}
+
+.ranking__item{
+    line-height: 22px;
+}

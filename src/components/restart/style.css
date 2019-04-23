@@ -1,0 +1,28 @@
+.restart{
+    padding: 15px 0;
+}
+
+.restart__button{
+    height: 48px;
+    background-color: #9d9d9c;
+    border-radius: 4px;
+    letter-spacing: 2px;
+    font-size: 16px;
+    padding: 0 20px;
+    margin-top: 10px;
+    color: #ffffff;
+    font-weight: bold;
+    border: 0;
+    cursor: pointer;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all .3s;
+}
+
+.restart__button:hover{
+    opacity: 0.8;
+}

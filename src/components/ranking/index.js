@@ -23,9 +23,14 @@ class Ranking extends Component {
 
         return (
             <div className="ranking">
-                {rankingList.map( (item, index) => (
-                    <RankingItem key={index} item={item} />
-                ))}
+                <div className="ranking__header">
+                    <span>Classificação dos jogadores:</span>
+                </div>
+                <ul className="ranking__list">
+                    {rankingList.map( (item, index) => (
+                        <RankingItem key={index} item={item} />
+                    ))}
+                </ul>
             </div>
         )
     }

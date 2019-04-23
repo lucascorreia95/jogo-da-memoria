@@ -2,6 +2,10 @@
     display: none;
 }
 
+.end-game__msg{
+    font-weight: 600;
+}
+
 .end-game.end-game--active{
     display: flex;
     justify-content: center;
