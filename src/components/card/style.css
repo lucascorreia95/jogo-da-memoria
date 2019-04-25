@@ -1,6 +1,7 @@
 .card {
     perspective: 1000;
     margin: 1%;
+    cursor: pointer;
 }
 
 .card__container.card__container--active, .card__container.card__container--found {  		
