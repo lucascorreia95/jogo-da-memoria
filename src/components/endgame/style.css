@@ -1,12 +1,12 @@
-.end-game{
+.end-game {
     display: none;
 }
 
-.end-game__msg{
+.end-game__msg {
     font-weight: 600;
 }
 
-.end-game.end-game--active{
+.end-game.end-game--active {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -20,7 +20,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.end-game__wrapper{
+.end-game__wrapper {
     padding: 15px;
     background: #fff;
     border-radius: 4px;

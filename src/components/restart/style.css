@@ -1,8 +1,8 @@
-.restart{
+.restart {
     padding: 15px 0;
 }
 
-.restart__button{
+.restart__button {
     height: 48px;
     background-color: #9d9d9c;
     border-radius: 4px;
@@ -23,6 +23,6 @@
     transition: all .3s;
 }
 
-.restart__button:hover{
+.restart__button:hover {
     opacity: 0.8;
 }

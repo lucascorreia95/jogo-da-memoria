@@ -1,11 +1,11 @@
-.main__container{
+.main__container {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
     padding: 15px;
 }
 
-.main__img{
+.main__img {
     max-width: 250px;
     margin: 0 auto;
 }

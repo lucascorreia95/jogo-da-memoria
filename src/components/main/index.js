@@ -12,24 +12,24 @@ class Main extends Component {
     
     render() {
         return (
-        <div className="main">
-            <div className="main__container">
-                <div className="main__header">
-                    <div className="main__logo">
-                        <figure className="main__img">
-                            <img src={Logo} alt="Jogo da memória" />
-                        </figure>
+            <div className="main">
+                <div className="main__container">
+                    <div className="main__header">
+                        <div className="main__logo">
+                            <figure className="main__img">
+                                <img src={Logo} alt="Jogo da memória" />
+                            </figure>
+                        </div>
+                        <Scoreboard />
                     </div>
-                    <Scoreboard />
-                </div>
-                <div className="main__deck">
-                    <Deck />
-                </div>
-                <div className="main__end-game">
-                    <EndGame />
+                    <div className="main__deck">
+                        <Deck />
+                    </div>
+                    <div className="main__end-game">
+                        <EndGame />
+                    </div>
                 </div>
             </div>
-        </div>
         )
     }
 }

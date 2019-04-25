@@ -4,9 +4,9 @@ export const clickCard = (id, markedCard, valueCard) => {
 
     if (id !== markedCard) {
         if (markedCard === -1) {
-            typeAction = 'MARKED_CARD'
+            typeAction = "MARKED_CARD"
         } else {
-            typeAction = 'SEC_MARKED_CARD'
+            typeAction = "SEC_MARKED_CARD"
         }
     }
 

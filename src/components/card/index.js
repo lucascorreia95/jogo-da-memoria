@@ -9,7 +9,7 @@ class Card extends Component {
 
   componentDidUpdate(){
     if( (this.props.markedCard !== -1) && (this.props.secMarkedCard !== -1) && 
-      ((this.props.markedCard === this.props.id ) || (this.props.secMarkedCard === this.props.id)) ){
+      ( (this.props.markedCard === this.props.id ) || (this.props.secMarkedCard === this.props.id) ) ) {
         
         this.props.lockScreen()
 
@@ -21,7 +21,7 @@ class Card extends Component {
   }
 
   handleCard(){
-    if (!this.props.blockedScreen){
+    if ( !this.props.blockedScreen ) {
       this.props.clickCard(this.props.id, this.props.markedCard, this.props.value) 
     }
   }
@@ -36,7 +36,7 @@ class Card extends Component {
       classValue = "card__container"
     }
 
-    if( this.props.pairsFound.indexOf(this.props.value) !== -1 ){
+    if( this.props.pairsFound.indexOf(this.props.value) !== -1 ) {
       classValue = `${classValue} card__container--found`
     }
 
@@ -44,7 +44,7 @@ class Card extends Component {
       <div className="card" onClick={ () => this.handleCard() } >
         <div className={classValue}>
           <figure className="card__front">
-            <img src={this.props.img} alt="Card" />
+            <img src={require(`../../assets/deck/${this.props.img}.svg`)} alt="Card" />
           </figure>
           <div className="card__back"></div>
         </div>
